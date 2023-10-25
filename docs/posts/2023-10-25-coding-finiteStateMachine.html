@@ -1,0 +1,212 @@
+<!DOCTYPE html><html class="no-js" lang="zh">
+
+
+<head>
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/solarized-light.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Long+Cang&family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>状态机的三种写法</title>
+<link rel="apple-touch-icon" sizes="180x180" href="../static/images/apple-touch-icon-next.png?v=6.4.1">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon-32x32-next.png?v=6.4.1">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon-16x16-next.png?v=6.4.1">
+<link rel="stylesheet" type="text/css" href="../static/css/mystyle.css">    
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+    <section class="banner"><img src="../static/images/banner.jpg"></section>
+</header>
+        <nav class="row">
+    <a class="nav" href="../">首页</a>
+    <a class="nav" href="../categories">分类</a>
+    <a class="nav" href="../tags">标签</a>
+    <a class="nav" href="../about">关于</a>
+</nav>
+
+        <main>
+            <h1 class="post-title">状态机的三种写法
+            </h1>
+            <section class="post-meta">
+                <p>发表于:2023.10.25 ||</p>
+                <p>分类:<a class="post-link" href="../categories/FPGA.html">FPGA</a> ||</p>
+            </section>
+            <section class="post-content">
+                <h2>---</h2>
+<!-- toc -->
+
+<!-- more -->
+
+<p>[TOC]</p>
+<h1>FPGA状态机编码的三种方式</h1>
+<h2>一、读热码</h2>
+<p>独热码（One-hot）是一种状态编码方式，其特点是对于任意给定的状态，状态寄存器中只有1位为1，其余位都为0。使用独热码可以简化译码逻辑电路，因为状态机只需对寄存器中的一位进行译码。</p>
+<ul>
+<li>n个bits的读热码可以表示$n$种状态；</li>
+<li><strong>举例</strong>：如若有4个状态，则需要4个比特来表示（S0=0001，S1=0010，S2=0100，S3=1000）</li>
+<li><font color='red'>独热码适合写条件复杂但是状态少的状态机， 这种编码方式还易于修改，增加状态或改变状态转换条件都可以在不影响状态机的其它部分的情况下很方便地实现。</font></li>
+</ul>
+<h2>二、格雷码</h2>
+<p>在一组数的编码中，若任意两个相邻的代码只有<strong>一位bit发生变化</strong>，则称这种编码为格雷码（Gray Code），另外由于最大数与最小数之间也仅一位数不同，即“首尾相连”，因此又称循环码或反射码。</p>
+<ul>
+<li>
+<p>n个bits的格雷码可以表示$2^{n}$种状态；</p>
+</li>
+<li>
+<p><strong>举例</strong>：如若有4个状态，则只需要2个比特来表示（S0=2‘b00, S1=2‘b01, S2=2‘b11, S3=2‘b01）；</p>
+</li>
+<li>
+<p>格雷码适合写条件不复杂但是状态多的状态机。</p>
+</li>
+<li>
+<p>由于格雷码是一种变权码，每一位码没有固定的大小，很难直接进行比较大小和算术运算，也不能直接转换成液位信号，要经过一次码变换，变成自然二进制码，再由上位机读取。</p>
+</li>
+<li>
+<p>格雷码的十进制数奇偶性与其码字中1的个数的奇偶性相同。</p>
+</li>
+</ul>
+<h2>三、二进制码</h2>
+<p>在一组数的编码中，若任意两个相邻的代码只有<strong>一位bit不同</strong>（<strong>逐渐+1</strong>），则称这种编码为二进制码，也可称连续编码，也就是码元值的大小是连续变化的。</p>
+<p><strong>举例</strong>：如若有4个状态，则只需要2个比特来表示（S0=2‘b00, S1=2‘b01, S2=2‘b11, S3=2‘b01）</p>
+<h1>格雷码与二进制码的区别</h1>
+<p>在上面提到的用2个bit来说明格雷码和二进制码的区别并不是很明显，接下来我们用3个bit来进行说明：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">十进制数</th>
+<th style="text-align: center;">二进制编码</th>
+<th style="text-align: center;">格雷码编码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">000</td>
+<td style="text-align: center;">000</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">001</td>
+<td style="text-align: center;">001</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">010</td>
+<td style="text-align: center;">011</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">011</td>
+<td style="text-align: center;">010</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">110</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">101</td>
+<td style="text-align: center;">111</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">101</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">111</td>
+<td style="text-align: center;">100</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>在标准二进制编码中，相邻码字之间可能会有多位二进制位同时改变，导致数字震荡的产生。而在格雷码编码中，相邻码字只有一位二进制位发生改变，从而降低了数字震荡的可能性。在模数转换中，使用格雷码编码可以减少不稳定性，提高信号的质量。</strong></li>
+</ul>
+<h1>三种编码方式的生成</h1>
+<p>待补充</p>
+<h1>格雷码与二进制码的转换</h1>
+<ul>
+<li>转载至:<a href="https://zhuanlan.zhihu.com/p/618712669">FPGA状态机详解 - 知乎 (zhihu.com)</a></li>
+</ul>
+<h2>格雷码转二进制码</h2>
+<p><img alt="grey2bin" src=".\2023-10-25-coding-finiteStateMachine\grey2bin.jpg" /></p>
+<pre><code>module gray2bin#(
+    parameter   DATA_WIDTH = 8
+)(
+    input   [DATA_WIDTH-1:0]  gray,
+    output  [DATA_WIDTH-1:0]  bin
+);
+
+    genvar          i;
+
+    assign bin[DATA_WIDTH-1] = gray[DATA_WIDTH-1];
+
+    generate
+        for(i = 0; i &lt; DATA_WIDTH-1; i = i+1) begin : gray_to_bin
+            assign bin[i] = gray[i]^bin[i+1];
+        end
+    endgenerate
+
+endmodule
+</code></pre>
+<h2>二进制码转格雷码</h2>
+<p><img src=".\2023-10-25-coding-finiteStateMachine\bin2gery.jpg" alt="bin2gery" style="zoom:67%;" /></p>
+<pre><code>module bin2gray#(
+    parameter   DATA_WIDTH = 8
+)(
+    input   [DATA_WIDTH-1:0]  bin,
+    output  [DATA_WIDTH-1:0]  gray
+);
+
+assign gray = {1'b0, bin[DATA_WIDTH-1:1]} ^ bin;
+
+//另一种方法：
+//assign oGrayCode = (iBinary &gt;&gt; 1) ^ iBinary
+
+endmodule
+</code></pre>
+<h1>FPGA状态机的实现方式</h1>
+<p>FPGA状态机的描述方式主要分为3种，分别是一段式、两段式、三段式。</p>
+<ul>
+<li>
+<p>写状态机时最好使用三段式的状态机，第一个状态机只写当前状态以及下一个状态；第二个状态机写下一个状态的跳转条件以及跳转状态；第三个状态机写输出。一般来说,状态转移部分（第一个状态机）是同步时序电路而状态的转移条件的判断（第二个状态机）是组合逻辑。</p>
+</li>
+<li>
+<p>三段式描述方法与两段式描述相比，虽然代码结构复杂了一些，但是换来的优势是使FSM （有限状态机<a href="https://blog.csdn.net/benjonc/article/details/79870947">有限状态机FSM详解（一）_fsm模型-CSDN博客</a>）做到了同步寄存器输出，消除了组合逻辑输出的不稳定与毛刺的隐患，而且更利于时序路径分组，一般来说在FPGA/CPLD 等可编程逻辑器件上的综合与布局布线效果更佳。
+  原文链接：https://blog.csdn.net/Next_FSE/article/details/73864370</p>
+</li>
+<li><strong>具体实例可见：<a href="https://zhuanlan.zhihu.com/p/618712669">FPGA状态机详解 - 知乎 (zhihu.com)</a></strong></li>
+</ul>
+            </section>
+            <section class="post-meta">
+                <p>标签:
+                    <a class="post-link" href="../tags/FPGA.html">FPGA</a>
+                    <a class="post-link" href="../tags/状态机.html">状态机</a>
+                </p>
+            </section>
+        </main>
+        <footer>© 2018 - 2023 WYX</footer>
+
+
+    </div>
+</body>
+
+</html>
