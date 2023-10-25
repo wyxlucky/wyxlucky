@@ -17,11 +17,11 @@ tags: [python,pip]
 
 ###### 2、运行 pip install 库文件(numpy)
 
-​    ![pip install&unistall](C:\Users\dell\Desktop\anaconda中python库文件的安装\Fig\pip install&unistall.png)
+​    ![pip install&unistall](.\2023-10-24-software-anaconda-pip\pip install&unistall.png)
 
 ######  3、pip的安装与升级 python -m pip install --upgrade pip
 
-![upgrade pip](C:\Users\dell\Desktop\anaconda中python库文件的安装\Fig\upgrade pip.png)
+![upgrade pip](.\2023-10-24-software-anaconda-pip\upgrade pip.png)
 
 ###### 4、pip源的选择转载至：[Python零基础教程系列：pip的安装和使用 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/132720748)
 

@@ -21,7 +21,7 @@ tags: [Typora]
 
 - **windows系统 阻止安装程序，设置还原破解文件**
 
-  <img src="C:\Users\dell\Desktop\typore\Fig\解除拦截设置.png" alt="解除拦截设置" style="zoom: 75%;" />
+  <img src=".\2023-10-24-software-Typore\解除拦截设置.png" alt="解除拦截设置" style="zoom: 75%;" />
 
 - **卸载删除与Typore相关的其他文件**
 
