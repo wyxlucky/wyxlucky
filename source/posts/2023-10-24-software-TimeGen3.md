@@ -2,7 +2,7 @@
 title: TimeGen3的安装与教程
 date: 2023/10/24
 categories: 软件使用
-tags: [时序设计]
+tags: [TimeGen3, 时序设计]
 
 ---
 
