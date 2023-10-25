@@ -1,5 +1,5 @@
 ---
-title: Typora使用笔记
+title: Typora使
 date: 2018/09/07
 categories: 软件使用
 tags: Typora
