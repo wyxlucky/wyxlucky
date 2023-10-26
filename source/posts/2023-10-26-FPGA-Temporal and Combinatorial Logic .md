@@ -1,6 +1,6 @@
 ---
 title: 时序逻辑与组合逻辑
-date: 2023/10/22
+date: 2023/10/26
 categories: FPGA
 tags: [FPGA,时序逻辑,组合逻辑]
 ---
