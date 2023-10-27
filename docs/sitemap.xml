@@ -2,77 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://wyxlucky.github.io/CNAME</loc>
-    <lastmod>2023-10-27T06:26:01.602872Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.314955Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/index.html</loc>
-    <lastmod>2023-10-27T06:26:01.775385Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.410781Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/about\index.html</loc>
-    <lastmod>2023-10-27T06:26:01.787435Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.415728Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/categories\FPGA.html</loc>
-    <lastmod>2023-10-27T06:26:01.776922Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.410781Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/categories\index.html</loc>
-    <lastmod>2023-10-27T06:26:01.776420Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.410781Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/categories\读书笔记.html</loc>
-    <lastmod>2023-10-27T06:26:01.776922Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.411761Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/categories\软件使用.html</loc>
-    <lastmod>2023-10-27T06:26:01.776922Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.411761Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/posts\2018-09-07-coding-Typora使用笔记.html</loc>
-    <lastmod>2023-10-27T06:26:01.685978Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.379469Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/posts\2023-10-24-software-anaconda-pip.html</loc>
-    <lastmod>2023-10-27T06:26:01.698237Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.381483Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/posts\2023-10-24-software-TimeGen3.html</loc>
-    <lastmod>2023-10-27T06:26:01.716011Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.385186Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/posts\2023-10-24-software-Typore.html</loc>
-    <lastmod>2023-10-27T06:26:01.726851Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.389352Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/posts\2023-10-25-coding-helloblog.html</loc>
-    <lastmod>2023-10-27T06:26:01.740338Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.393339Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/posts\2023-10-25-FPGA-finiteStateMachine.html</loc>
-    <lastmod>2023-10-27T06:26:01.754382Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.400058Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/posts\2023-10-26-FPGA-Temporal and Combinatorial Logic .html</loc>
-    <lastmod>2023-10-27T06:26:01.771207Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.406745Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/posts\2023-10-26-reading-eergunaheyouan.html</loc>
-    <lastmod>2023-10-27T06:26:01.775385Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.408784Z</lastmod>
   </url>
 
   <url>
@@ -98,6 +98,11 @@
   <url>
     <loc>https://wyxlucky.github.io/posts\2023-10-25-FPGA-finiteStateMachine\grey2bin.jpg</loc>
     <lastmod>2023-10-25T11:04:20.472332Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://wyxlucky.github.io/posts\2023-10-26-reading-eergunaheyouan\微信图片_20231027142922.jpg</loc>
+    <lastmod>2023-10-27T06:30:24.848919Z</lastmod>
   </url>
 
   <url>
@@ -257,61 +262,61 @@
 
   <url>
     <loc>https://wyxlucky.github.io/tags\blog.html</loc>
-    <lastmod>2023-10-27T06:26:01.780311Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.413773Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/tags\FPGA.html</loc>
-    <lastmod>2023-10-27T06:26:01.778312Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.411761Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/tags\index.html</loc>
-    <lastmod>2023-10-27T06:26:01.778312Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.411761Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/tags\pip.html</loc>
-    <lastmod>2023-10-27T06:26:01.780311Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.413773Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/tags\python.html</loc>
-    <lastmod>2023-10-27T06:26:01.780311Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.413773Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/tags\TimeGen3.html</loc>
-    <lastmod>2023-10-27T06:26:01.780311Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.413773Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/tags\Typora.html</loc>
-    <lastmod>2023-10-27T06:26:01.779315Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.412735Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/tags\时序设计.html</loc>
-    <lastmod>2023-10-27T06:26:01.781309Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.414725Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/tags\时序逻辑.html</loc>
-    <lastmod>2023-10-27T06:26:01.778312Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.411761Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/tags\状态机.html</loc>
-    <lastmod>2023-10-27T06:26:01.780311Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.413773Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/tags\组合逻辑.html</loc>
-    <lastmod>2023-10-27T06:26:01.778312Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.412735Z</lastmod>
   </url>
 
   <url>
     <loc>https://wyxlucky.github.io/tags\额尔古纳河右岸.html</loc>
-    <lastmod>2023-10-27T06:26:01.779315Z</lastmod>
+    <lastmod>2023-10-27T06:30:49.412735Z</lastmod>
   </url>
 </urlset>
