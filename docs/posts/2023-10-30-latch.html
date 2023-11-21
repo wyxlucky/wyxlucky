@@ -1,0 +1,141 @@
+<!DOCTYPE html><html class="no-js" lang="zh">
+
+
+<head>
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/solarized-light.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Long+Cang&family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>锁存器 同/异置位与复位</title>
+<link rel="apple-touch-icon" sizes="180x180" href="../static/images/apple-touch-icon-next.png?v=6.4.1">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon-32x32-next.png?v=6.4.1">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon-16x16-next.png?v=6.4.1">
+<link rel="stylesheet" type="text/css" href="../static/css/mystyle.css">    
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+    <section class="banner"><img src="../static/images/banner.jpg"></section>
+</header>
+        <nav class="row">
+    <a class="nav" href="../">首页</a>
+    <a class="nav" href="../categories">分类</a>
+    <a class="nav" href="../tags">标签</a>
+    <a class="nav" href="../about">关于</a>
+</nav>
+
+        <main>
+            <h1 class="post-title">锁存器 同/异置位与复位
+            </h1>
+            <section class="post-meta">
+                <p>发表于:2023.10.30 ||</p>
+                <p>分类:<a class="post-link" href="../categories/FPGA.html">FPGA</a> ||</p>
+            </section>
+            <section class="post-content">
+                <h2>---</h2>
+<!-- toc -->
+
+<!-- more -->
+
+<h1>什么是锁存器？</h1>
+<ul>
+<li>
+<p>锁存器（latch）是一种在<strong>异步电路</strong>系统中，对输入信号电平敏感的单元，用来存储信息。锁存器在数据未锁存时，输出端的信号随输入信号变化，此时信号通过锁存器就相当于通过了一个缓存器，一旦锁存信号有效，则数据被锁存，输入信号不起作用。因此锁存器也被称为透明锁存器，指的是不锁存时输出对于输入是透明的。</p>
+</li>
+<li>
+<p>当使能端为高电平时，输入口的数据直接送到输出口，此时输入输出口可以看成是直接连通的；当使能端为低电平时，输出口的数据保持之前的数据不变，无论输入口的数据怎么变化，输出都保持不变，就是把原来的状态锁存下来了（所以才叫锁存器）。锁存器与触发器的区别在于：<strong>锁存器是电平触发，而触发器是边沿触发。</strong>锁存器在不锁存数据时，输出随输入变化；但一旦数据锁存时，输入对输出不产生任何影响。</p>
+</li>
+<li>
+<p>锁存器(Latch)是一种对脉冲电平敏感的存储单元电路，它们可以在特定输入脉冲电平作用下改变状态【1】。换句话说，如果一个模块的只有在特定电平的作用下，才会将输入信息更新到他的输出引脚，否则该模块的输出将保持不变，那么这个模块就可以被看成是一个锁存器。</p>
+</li>
+</ul>
+<p><font color='red'>时序逻辑由于寄存器的存在，因此不需要锁存器来存储数据；</font></p>
+<h1>什么情况下会生成锁存器？</h1>
+<p>在组合逻辑中，若是存在某个信号保持不变的时候，就会生成锁存器。</p>
+<h2>不恰当的使用if语句</h2>
+<p><a href="https://blog.csdn.net/u014055367/article/details/118482394">关于FPGA中锁存器的生成：if语句和case语句的完整性影响_fpga if_傲慢的绅士的博客-CSDN博客</a></p>
+<pre><code>always @(*)
+begin
+    if (condition)
+    bengin
+        a  = b+1;
+    end
+end
+</code></pre>
+<p>上述代码中，没有else，当condition不成立时，输出a都不会改变，即保持它保持其先前的值。</p>
+<h2>不恰当的使用case语句</h2>
+<pre><code>reg [1:0] state; //在组合逻辑中always要使用阻塞赋值
+reg a;
+reg b;
+always @(*)
+    begin
+        case(state)
+        2'b00 : a = a + b;
+        2'b01 : a = a - b;
+        default : a = 0;
+    endcase
+
+
+</code></pre>
+<p>上述代码中如果case情况不能覆盖所有情况(<font color='red'>缺省</font>)，就会产生锁存器。如果用case语句，最好写上default项。</p>
+<p>需要注意的是一定是组合逻辑才会产生锁存器，时序逻辑永远不会！ 既然我们知道了产生锁存器的原因，我们自然知道如何规范代码，为所有可能的输入分配输出，适当地在case中使用default以及在if中使用else并分配输出值，就可以避免这种情况。</p>
+<h2>组合逻辑中输出变量赋值给自己</h2>
+<pre><code>always @(*)
+begin
+    if (condition)
+    bengin
+        a &lt; = b+1;
+    end
+    else a=a;
+end
+</code></pre>
+<h2>锁存器的缺点</h2>
+<ul>
+<li>
+<p>由于锁存器是毛刺敏感的，如果不能保证sel信号的质量，那么会造成输出信号a的不稳定；</p>
+</li>
+<li>
+<p>FPGA芯片中一般没有锁存器这样一个资源，需要使用一个触发器和一些逻辑门来实现，比较浪费资源；</p>
+</li>
+<li>
+<p>锁存器的引入会对时序分析造成困难。</p>
+</li>
+</ul>
+<h1>同步复位与异步复位</h1>
+<p>同步置位：当置位信号有效且时钟上升沿到来时，才会执行置位。</p>
+<p>异步置位：只要<strong>置位信号</strong>有效，就会执行置位，不考虑时钟信号是否有效。</p>
+<p>参见：<a href="https://blog.csdn.net/m0_61949778/article/details/131849553?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-131849553-blog-105203494.235^v38^pc_relevant_anti_t3&amp;spm=1001.2101.3001.4242.1&amp;utm_relevant_index=3">同步置位与异步置位_只会点灯的小白的博客-CSDN博客</a></p>
+<h1>同步置位与异步置位</h1>
+<p><a href="https://blog.csdn.net/bleauchat/article/details/97028410">同步复位与异步复位_同步复位和异步复位-CSDN博客</a></p>
+<p>同步复位：同步复位就是指复位信号只有在时钟上升沿到来时，才能有效。</p>
+<p>异步复位：异步复位是指无论时钟沿是否到来，只要复位信号有效，就对系统进行复位。</p>
+            </section>
+            <section class="post-meta">
+                <p>标签:
+                    <a class="post-link" href="../tags/锁存器 同/异置位与复位.html">锁存器 同/异置位与复位</a>
+                </p>
+            </section>
+        </main>
+        <footer>© 2018 - 2023 WYX</footer>
+
+
+    </div>
+</body>
+
+</html>
