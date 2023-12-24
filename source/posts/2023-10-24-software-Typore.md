@@ -14,6 +14,8 @@ tags: [Typora]
 
 ###### 安装过程转载至：[Typora激活破解2023最新教程（含mac+windows） - 哔哩哔哩 (bilibili.com)](https://www.bilibili.com/read/cv24557020/)
 
+[Typora激活使用指南（2023年最新版） - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/661170065)
+
 ###### 安装包以及破解文件：链接：https://pan.baidu.com/s/1Y13n3VmAkKwr4qiOMMMOwQ 
 ######                                       提取码：w7x9
 

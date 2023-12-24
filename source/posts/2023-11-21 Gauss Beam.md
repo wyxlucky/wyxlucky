@@ -21,7 +21,7 @@ tags: [高斯光束 透镜]
 
 ## 高斯光束的传播
 
-<img src="D:\blog\source\posts\2023-11-21 Gauss Beam\GAUSS.jpg" alt="GAUSS" style="zoom:33%;" />
+<img src=".\2023-11-21 Gauss Beam\GAUSS.jpg" alt="GAUSS" style="zoom:33%;" />
 
 - 高斯光束的发散角：
   $$
@@ -38,7 +38,6 @@ tags: [高斯光束 透镜]
   \omega(z)=\frac{\pi*\omega_{0}^{2}}{\lambda}
   $$
   
-
 - 高斯光束的传播：
   $$
   \omega(s) = \omega_{0}\sqrt{1+(\frac{\lambda*s }{\pi*\omega_{0}^{2}})^{2}}
@@ -49,7 +48,7 @@ tags: [高斯光束 透镜]
 
   透镜前为物，透镜后为像。
 
-  <img src="D:\blog\source\posts\2023-11-21 Gauss Beam\GASSS LEN.jpg" alt="GASSS LEN" style="zoom:33%;" />
+  <img src=".\2023-11-21 Gauss Beam\GASSS LEN.jpg" alt="GASSS LEN" style="zoom:33%;" />
 
 - 入射的高斯光束经过经过一个焦距为$$f$$的透镜后，出射光束的束腰变化：
 
@@ -106,7 +105,7 @@ $$
 
 ## 高斯光束的扩束与缩束
 
-<img src="D:\blog\source\posts\2023-11-21 Gauss Beam\LENS.jpg" alt="LENS" style="zoom:33%;" />
+<img src="\2023-11-21 Gauss Beam\LENS.jpg" alt="LENS" style="zoom:33%;" />
 
 高斯光束经过两个透镜，两个透镜的距离为$$f_{1}+f_{2}$$，则高斯光束经过如下变换：
 $$
@@ -132,7 +131,7 @@ $$
 
 因为激光器的输出光束直径一般较小，使用前有时需要先扩束，这时可以通过望远镜光路实现，扩束比就是两透镜焦距的比值。此时在焦点附近加一个针孔可消除光束的强度噪声，得到更干净的输出光。为了达到最佳性能应使用平凸透镜，并且将平面一侧朝向焦点，如下图所示。
 
-![1](D:\blog\source\posts\2023-11-21 Gauss Beam\1.png) 
+![1](.\2023-11-21 Gauss Beam\1.png) 
 
 ## Mathmatic代码
 
