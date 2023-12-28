@@ -1,0 +1,138 @@
+<!DOCTYPE html><html class="no-js" lang="zh">
+
+
+<head>
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/solarized-light.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Long+Cang&family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>OLSO</title>
+<link rel="apple-touch-icon" sizes="180x180" href="../static/images/apple-touch-icon-next.png?v=6.4.1">
+<link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon-32x32-next.png?v=6.4.1">
+<link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon-16x16-next.png?v=6.4.1">
+<link rel="stylesheet" type="text/css" href="../static/css/mystyle.css">    
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+    <section class="banner"><img src="../static/images/banner.jpg"></section>
+</header>
+        <nav class="row">
+    <a class="nav" href="../">首页</a>
+    <a class="nav" href="../categories">分类</a>
+    <a class="nav" href="../tags">标签</a>
+    <a class="nav" href="../about">关于</a>
+</nav>
+
+        <main>
+            <h1 class="post-title">OLSO
+            </h1>
+            <section class="post-meta">
+                <p>发表于:2023.12.24 ||</p>
+                <p>分类:<a class="post-link" href="../categories/光学.html">光学</a> ||</p>
+            </section>
+            <section class="post-content">
+                <h2>---</h2>
+<!-- toc -->
+
+<!-- more -->
+
+<p>[TOC]</p>
+<h1>OSLO的下载与安装</h1>
+<ul>
+<li>可以免费下载教育版，链接如下：</li>
+</ul>
+<p><a href="https://lambdares.com/oslo-edu-download">OSLO EDU FREE Download | Lambda Research Corporation</a></p>
+<ul>
+<li>使用教程，链接如下：</li>
+</ul>
+<p><a href="https://www.bilibili.com/video/BV1Sr4y1g7yj/?buvid=Z847158CF5735FD14817A783DF728EC22320&amp;is_story_h5=false&amp;mid=dus3vfCDXNSc%2BlVqkPHr1w%3D%3D&amp;p=1&amp;plat_id=114&amp;share_from=ugc&amp;share_medium=ipad&amp;share_plat=ios&amp;share_source=WEIXIN&amp;share_tag=s_i&amp;timestamp=1703396514&amp;unique_k=R8mGfSs&amp;up_id=413029525">os__L__o___哔哩哔哩_bilibili</a></p>
+<ul>
+<li><img src=".\2023-12-24 OLSO\图片1.png" alt="图片1" style="zoom:22%;" /></li>
+</ul>
+<h1>像差</h1>
+<h4>Chromatic aberration（色差）</h4>
+<ul>
+<li>Chromatic aberration of a single lens causes different wavelengths of light to have differing focal lengths. 波长越长，像距越大。</li>
+</ul>
+<p><a href="https://www.tengrant.com/content/?1154.html">显微镜的色差 (tengrant.com)</a></p>
+<p><img src=".\2023-12-24 OLSO\Chromatic_aberration_lens_diagram.png" alt="Chromatic_aberration_lens_diagram" style="zoom:33%;" /></p>
+<ul>
+<li>
+<p>在介质中，由$$n=c/v$$得出传播速度（波速）大的折射率小，传播速度的小的折射率大（<font color='red'>$v=\lambda*f$，光的频率不会发生变化</font>）。所以红光折射率最小，紫光折射率最大。</p>
+</li>
+<li>
+<p>该网页可计算不同材料透镜的折射率：<a href="https://refractiveindex.info/?shelf=glass&amp;book=BK7&amp;page=SCHOTT">Refractive index of BK7 - SCHOTT</a></p>
+</li>
+<li>
+<p>焦距随折射率的关系由以下公式给出：
+  $$
+  \frac{1}{f}=(n-1)(\frac{1}{R_{1}}-\frac{1}{R_{2}}+\frac{d(n-1)}{n R_{1}R_{2}})
+  $$
+  其中，$n$为介质的折射率，$R_{1}$为透镜的入射面曲率半径，$R_{2}$为透镜的出射面曲率半径，$d$为透镜的厚度。</p>
+</li>
+</ul>
+<p>###### 轴向色差</p>
+<ul>
+<li>指不同波长的光束通过透镜后焦点位于沿轴不同位置，因为它的形成原因同球差。</li>
+</ul>
+<p>###### 垂轴色差</p>
+<ul>
+<li>
+<p>指当一物体通过透镜有不同波长的光成像时，由于放大率的不同从而使所成像的高度不同，此种像差称之为<strong>垂轴色差或倍率色差</strong></p>
+</li>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/361330310">光学原理回顾：光学系統中重要的参数（四.色差·像差形式） - 知乎 (zhihu.com)</a></p>
+</li>
+</ul>
+<p>###### chromatic focal shift(焦点色位移)</p>
+<p><img src=".\2023-12-24 OLSO\1703400269793.png" alt="1703400269793" style="zoom: 50%;" /></p>
+<ul>
+<li><a href="http://www.optzmx.com/thread-20031-1-1.html">轴向色散（longitudinal aberration）和焦点色位移（chromatic focal shift）的区别 - ZEMAX - 吾爱光设 - Powered by Discuz! (optzmx.com)</a></li>
+</ul>
+<h4>Spherical aberration (球差)</h4>
+<h4>Astigmatism(像散)</h4>
+<ul>
+<li><strong>像散</strong>（<strong>Astigmatism</strong>）是一种因为大倾角的窄光束所带来的的单色像差。</li>
+</ul>
+<p><a href="https://zhuanlan.zhihu.com/p/655363212">光学系统基础像差之像散 - 知乎 (zhihu.com)</a></p>
+<p><img src=".\2023-12-24 OLSO\1920px-Astigmatism.svg.png" alt="1920px-Astigmatism.svg" style="zoom:33%;" /></p>
+<h4>MTF Modulation Transfer Function(<a href="https://www.zhihu.com/search?q=调制传递函数&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A13727875}">调制传递函数</a>)</h4>
+<ul>
+<li>
+<p>MTF曲线是一个反映镜头清晰度的图</p>
+</li>
+<li>
+<p><a href="https://www.zhihu.com/question/19713211">(91 封私信 / 81 条消息) MTF 曲线图应该怎么看？ - 知乎 (zhihu.com)</a></p>
+</li>
+</ul>
+            </section>
+            <section class="post-meta">
+                <p>标签:
+                    <a class="post-link" href="../tags/成像 像差.html">成像 像差</a>
+                </p>
+            </section>
+        </main>
+        <footer>© 2018 - 2023 WYX</footer>
+
+
+    </div>
+</body>
+
+</html>
