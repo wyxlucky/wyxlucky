@@ -105,7 +105,7 @@ $$
 
 ## 高斯光束的扩束与缩束
 
-<img src="\2023-11-21 Gauss Beam\LENS.jpg" alt="LENS" style="zoom:33%;" />
+<img src=".\2023-11-21 Gauss Beam\LENS.jpg" alt="LENS" style="zoom:33%;" />
 
 高斯光束经过两个透镜，两个透镜的距离为$$f_{1}+f_{2}$$，则高斯光束经过如下变换：
 $$
